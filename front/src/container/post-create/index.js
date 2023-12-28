@@ -31,9 +31,7 @@ export default function Container({ onCreate, placeholder, button, id = null }) 
             if (res.ok) {
                 setStatus(null);
 
-                if (onCreate) {
-                    onCreate()
-                };
+                if (onCreate) onCreate()
             } else {
                 setMessage(data.message);
                 setStatus(LOAD_STATUS.ERROR)
