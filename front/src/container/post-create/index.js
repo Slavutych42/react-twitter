@@ -31,7 +31,7 @@ export default function Container({ onCreate, placeholder, button, id = null }) 
             if (res.ok) {
                 setStatus(null);
 
-                if (onCreate) onCreate()
+                if (onCreate) onCreate()        
             } else {
                 setMessage(data.message);
                 setStatus(LOAD_STATUS.ERROR)
@@ -42,13 +42,13 @@ export default function Container({ onCreate, placeholder, button, id = null }) 
         }
     };
 
-    const convertData = ({ value }) => {
+    const convertData = ({ value }) => 
         JSON.stringify({
             text: value,
             username: "user",
             postId: id,
         })
-    }
+    
 
     return (
         <Grid>
